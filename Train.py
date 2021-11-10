@@ -1,3 +1,6 @@
+'''Run 256 games with different agents and then bread the generation to create the next generation.
+Top Agent is saved every generation, Best Agent is saved each time a new highscore is achieved'''
+
 from pandas.core.frame import DataFrame
 from lib.neural_network import Tools
 from concurrent.futures import ProcessPoolExecutor
