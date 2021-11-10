@@ -1,3 +1,5 @@
+'''Script to load a trained agent to play the game'''
+
 from Train import worker
 import pickle
 
