@@ -4,6 +4,9 @@ Reinforcement Learning using a genetic algorithm to train a neural network to pl
 
 
 
-https://user-images.githubusercontent.com/94034810/141057393-52506b9e-b8ed-4d6d-8503-4ae8d008ebea.mp4
 
+
+
+
+https://user-images.githubusercontent.com/94034810/141082558-a9427023-5a3d-40bb-b583-cbd69a21dea8.mp4
 
