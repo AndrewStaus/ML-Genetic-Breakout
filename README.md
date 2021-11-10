@@ -1,4 +1,4 @@
-# ML-Genetic-Breakout
+# Genetic Breakout
 Reinforcement Learning using a Genetic Algorithm to train a neural network to play a version of the classic game Breakout
 <br>Game starts with 3 rows.
 <br>Each time the screen is cleared an additional row is added.
