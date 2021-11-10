@@ -1,5 +1,5 @@
 '''Launch a game of breakout for human to play.
-W -> left
+W -> Left
 D -> Right
 Space -> Launch Projectile'''
 
