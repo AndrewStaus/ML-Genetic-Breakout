@@ -13,9 +13,10 @@
 <p>
   The algorithm being used is broken into 4 steps
   <ul>
-    <li>One</li>
-    <li>Two</li>
-    <li>Three</li>
+    <li>Determine Fitness</li>
+    <li>Selection</li>
+    <li>Crossover</li>
+    <li>Mutation</li>
   </ul>
 </p>
 
