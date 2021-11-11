@@ -43,9 +43,8 @@
   </ul>
   
   <h3>Input Layer</h3>
-  Input layer consists of 25 nodes.
+  Input layer consists of 25 nodes:
   <ul>
-
     <li>Paddle X Position</li>
     <li>Ball X Position</li>
     <li>Ball Y Position</li>
