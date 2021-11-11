@@ -1,8 +1,16 @@
 <h1>Genetic Breakout</h1>
-Reinforcement Learning using a Genetic Algorithm to train a neural network to play a version of the classic game Breakout
-<br>Game starts with 3 rows.
-<br>Each time the screen is cleared an additional row is added.
-<br>Game continues for 15 levels with a max score of 1800.
+<h2>Abstract</h2>
+<p>
+  Breakout is a classic game created by Attari in 1976.  The goal of the game is to use a pong like ball and paddle to hit bricks at the top of the screen to break them.
+  Once all breaks are broken the game advances to the next screen.
+  In this version of the game, each new screen adds an additional row to increase difficulty.  Once 15 levels are completed the game ends.
+  
+  The Objective of this project is to use a Genetic Algorithm to train a nural network to achieve a perfect score for the game.
+  Reinforcement Learning using a Genetic Algorithm to train a neural network to play a version of the classic game Breakout
+  Game starts with 3 rows.
+  Each time the screen is cleared an additional row is added.
+  Game continues for 15 levels with a max score of 1800.
+</p>
 
 
 <br>The training example uses a 25 input nodes for the game state
