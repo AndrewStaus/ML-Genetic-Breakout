@@ -93,7 +93,7 @@ def main(graphics = True, agent= None):
     if graphics:
         pygame.display.set_caption("Breakout")
         pygame.font.init()
-        myfont = pygame.font.Font(r'.\lib\font\font.ttf', 20)
+        myfont = pygame.font.Font(r'.\resources\font\font.ttf', 20)
         screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
         game.FPS = FPS
         
