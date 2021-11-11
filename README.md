@@ -5,11 +5,18 @@
   Once all breaks are broken the game advances to the next screen.
   In this version of the game, each new screen adds an additional row to increase difficulty.  Once 15 levels are completed the game ends.
   
-  The Objective of this project is to use a Genetic Algorithm to train a nural network to achieve a perfect score for the game.
-  Reinforcement Learning using a Genetic Algorithm to train a neural network to play a version of the classic game Breakout
-  Game starts with 3 rows.
-  Each time the screen is cleared an additional row is added.
-  Game continues for 15 levels with a max score of 1800.
+  The Objective of this project is to use a Genetic Algorithm to train a nural network (the agent) to achieve a perfect score for the game.
+  This is a type of reinforcement learning that will "reward" the best agents by preffering them as parents when the next generation is created.
+</p>
+
+<h2>The Genetic Algorithm</h2>
+<p>
+  The algorithm being used is broken into 4 steps
+  <ul>
+    <li>One</li>
+    <li>Two</li>
+    <li>Three</li>
+  </ul>
 </p>
 
 
