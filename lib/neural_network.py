@@ -1,8 +1,25 @@
+'''
+<h1>Neural Network</h1>
+<p>
+Deep neural network library, includes support for training through back propagation
+as well as reinforcement learning.
+<br> Implemented with a scikit learn like api for ease of use.
+</p>
+<br><h3>Supported activation functions:</h3>
+<p>
+    <ul>
+        <li>ReLu</li>
+        <li>Sigmoid</li>
+        <li>Tanh</li>
+        <li>Linear</li>
+        <li>Softmax</li>
+    </ul> 
+</p>
+'''
 import numpy as np
 from random import shuffle
 from math import floor
 from random import shuffle, choices
-from tqdm.notebook import tqdm
 from copy import deepcopy
 
 
@@ -168,19 +185,6 @@ class DeepNeuralNetwork:
             training_data = list(zip(x_train, y_train))
             shuffle(training_data)
 
-            t = tqdm(range(self.batches))
-
-            for batch in t:
-                
-                for _ in range(batch_size):
-
-                    x,y = training_data.pop()
-                    output = self.predict(x)
-                    changes_to_wb = self.backward_pass(y, output)
-                    self.update_parameters(changes_to_wb)
-
-                t.set_description(f'Epoch: {epoch+1}, Batch: {batch+1}')
-                t.refresh()
             accuracy = self.compute_accuracy(x_val, y_val)
             print(accuracy*100)
 
