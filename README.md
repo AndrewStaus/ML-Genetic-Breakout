@@ -31,8 +31,8 @@
 <br>1 hidden layer with 16 nodes with ReLU activation functions
 <br>and a 3 node output layer with softmax activation.
 
-<p style="text-align:center">
-<img src="https://user-images.githubusercontent.com/94034810/141222394-a0837a16-f3ba-409c-a3da-b2d8ec996627.png" width="500">
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/94034810/141222394-a0837a16-f3ba-409c-a3da-b2d8ec996627.png" width="500">
 </p>
 
 
