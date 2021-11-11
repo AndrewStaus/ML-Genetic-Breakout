@@ -144,7 +144,7 @@ def main(graphics = True, agent= None):
         if game.level >= MAX_LEVELS +1:
             if agent:
                 run=False
-                return(game.score*4)
+                return(game.score)
 
             print(f'Game Over!  Score: {game.score}')
             game.score = 0
