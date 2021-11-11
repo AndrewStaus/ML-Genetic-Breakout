@@ -31,7 +31,20 @@
 </p>
 
 
-
+<h2>Implementation</h2>
+<h3>Libraries</h3>
+<p>
+  <ul>
+    <li>Numpy: Vectorized calculations is key speed up hypothisis processing.  Greatly reduces training and playback times</li>
+    <li>Pickle: Serialize and save the agents for later use</li>
+    <li>Pandas: Export log data to dataframes</li>
+    <li>Pygame: Create a basic Breakout like game</li>
+    <li>Concurrent Futures:  Enable multi-processing to allow mutliple agents to play at the same time durring training</li>
+  </ul>
+ 
+ 
+  
+</p>
 <br>The training example uses a 25 input nodes for the game state
 <br>1 hidden layer with 16 nodes with ReLU activation functions
 <br>and a 3 node output layer with softmax activation.
