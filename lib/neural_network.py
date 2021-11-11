@@ -256,17 +256,3 @@ class Tools:
 
             for network in population:
                 network.mutate(rate=rate, scale=scale)
-
-
-if __name__ == '__main__':
-
-
-    dnn = DeepNeuralNetwork(input = 5, config = [[16, 'relu'], [16, 'relu'], [3, 'softmax']])
-
-    output = np.zeros(5)
-
-    softmax = dnn(output)
-    network_inputs = [softmax == np.max(softmax)][0]
-    print(network_inputs)
-
-
