@@ -1,12 +1,12 @@
 <h1>Genetic Breakout</h1>
 <h2>Abstract</h2>
 <p>
-  Breakout is a classic game created by Attari in 1976.  The goal of the game is to use a pong like ball and paddle to hit bricks at the top of the screen to break them.
+  Breakout is a classic game created by <i>Attari</i> in 1976.  The goal of the game is to use a <i>Pong</i> like ball and paddle to hit bricks at the top of the screen to break them.  Breaking a break awards a point.
   Once all breaks are broken the game advances to the next screen.
-  In this version of the game, each new screen adds an additional row to increase difficulty.  Once 15 levels are completed the game ends.
+  In this version of the game, each new screen adds an additional row of bricks to increase difficulty.  Once 15 levels are completed the game ends.
   
   The Objective of this project is to use a Genetic Algorithm to train a neural network (the agent) to achieve a perfect score for the game.
-  This is a type of reinforcement learning that will "reward" the best agents by preferring them as parents when the next generation is created.
+  This is a type of unsperivsed learning called <i>reinforcement learning</i> that will "reward" the best agents by preferring them as parents when the next generation is created.
 </p>
 
 <h2>The Genetic Algorithm</h2>
@@ -18,16 +18,18 @@
     <li>Crossover</li>
     <li>Mutation</li>
   </ul>
+  These steps ensures that the agent pool stays diverse so that new approaches are tried, and the agents do not become stuck in local optima.
   
-  An initial generation is created by creating a number of neural networks with random weight initializations.
+
   <h3>Determine Fitness of Agents</h3>
-  The Generation plays the game and their fitness is determined by the score they achieve.  If an agent gets stuck for too long without breaking a block, the game is also ended ensuring that there are no infinite loops.
+  Fitness is a measure of how well an agent performed a desired task.  If a fitness function does not accurately reward desired activity, agents may be slow to learn or not ever progress.
+  To determine fitness the all agents in a generation play the game and their fitness is determined by the score they achieve.  If an agent gets stuck for too long without breaking a block, the agent loses a life ensuring that there is not an incentive for the agents to enter infinite loops.
   <h3>Selection</h3>
-  Once fitness is determined, agents are selected stochastically weighted on their fitness.  If an agent scored higher, they are more likely to be chosen.  Agents can be chosen more than once.
+  Once fitness is determined, agents are selected stochastically, weighted on their fitness.  Agents with higher fitness are are more likely to be chosen more often.  Agents can be chosen more than once.
   <h3>Crossover</h3>
-  Once two agents are selected, crossover occurs.  Each weight and bias is given a 50% chance to be selected from either agent.  The new resulting agent has 50% of the weights from one parent, and 50% of the weights from the other.
+  Once two agents <i>(parents)</i> are selected, crossover occurs.  Each weight and bias is given a 50% chance to be selected from either agent.  The new resulting agent <i>(child)</i> has 50% of the weights from one parent, and 50% of the weights from the other.
   <h3>Mutation</h3>
-  The new agent then undergoes mutation.  A small portion of the weights and biases are chosen at random for change, and then slightly tweaked.
+  The new agent <i>(child)</i> then undergoes mutation.  A small portion of the weights and biases are chosen at random for change, and then slightly tweaked.
 </p>
 
 
@@ -71,15 +73,21 @@
 
 
 <h2>Training</h2>
-<img src="https://user-images.githubusercontent.com/94034810/141082768-7519e5b3-fba8-4f3a-a0bb-bc955b0052ff.png">
-
+<p>
+  256 agents are tested for fitness in each generation.  To speed up testing, games are run in parallel with graphics disabled.  Disabling graphics greatly increases the processing of each frame, greatly reducing run time.
+  
+  <h3>Hyper-Paramaters</h3>
+  <ul>
+  <li><b>Fitness:</b> Score^2.  Using an exponential funcion for fitness causes agents that perform slightly better will have a much larger probability to be selected than their close rivals.  This helps keep the agent pool healthy</li>
+  <li><b>Muration Rate:</b> 25% of the weights and biases will be altered on an agent durring the mutation step</li>
+  <li><b>Mutation Scale:</b> 0.10, this will cause a realitivly small change to occure on the weights and biases that are chosen randomly for mutation</li>
+  </ul>
+  
+  
+  <h3>Results</h3>
+  Optomization was slow for the first 44 generations while the agents learned how to clear the first screen.  Once that hurdle was overcome, they were able to generalize to later levels spiking the learning rate.
+  <img src="https://user-images.githubusercontent.com/94034810/141082768-7519e5b3-fba8-4f3a-a0bb-bc955b0052ff.png">
+  Top agent scores fluctuate durring training, but the mean score of the population continues to increase.  There is a breakthrough around generation 60 and the agents are able to obtimize for a perfect score on generation 72.
+</p>
 
 https://user-images.githubusercontent.com/94034810/141233933-9f59d17a-ec49-49fc-9114-75b2b9c29bd6.mp4
-
-
-
-
-  
-<h2>Notes:</h2>
-<br>Generation 44 completes first screen
-<br>Generation 72 completes perfect game (15 screens)
