@@ -50,7 +50,7 @@
     <li>Ball Y Position</li>
     <li>Ball X Vector</li>
     <li>Ball Y Vector</li>
-    <li>Count of active blocks in each row</li>
+    <li>Count of active blocks in each row (20 values)</li>
   </ul>
 
 
