@@ -60,14 +60,15 @@
   
   <b>Output layer</b> has 3 nodes with Softmax activations:
   <ul>
-  <li>Move Paddle Left ('<-' input)</li>
-  <li>Move Paddle Right ('->' input)</li>
+  <li>Move Paddle Left</li>
+  <li>Move Paddle Right</li>
   <li>Do Nothing</li>
   </ul>
   
   For each game clock cycle (frame) the network is given the input and makes a decision what action to take.  Softmax activation ensures that conflicting actions are not possible.
-  
-  <img src="https://user-images.githubusercontent.com/94034810/141235668-ab609c06-6714-469a-8709-47816371273e.png">
+</p>
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/94034810/141257678-e6b6cb6b-b2c1-42d9-8c1f-a0553a5821b3.png">
 </p>
 
 <h2>Training</h2>
@@ -84,17 +85,23 @@
   
   <h3>Results</h3>
   Optimization was slow for the first 44 generations while the agents learned how to clear the first screen.  Once that hurdle was overcome, they were able to generalize to later levels spiking the learning rate.
+<p align="center">
   <img src="https://user-images.githubusercontent.com/94034810/141082768-7519e5b3-fba8-4f3a-a0bb-bc955b0052ff.png">
+</p>
+<p>
   Top agent scores fluctuate during training, but the mean score of the population continues to increase.  There is a breakthrough around generation 60 and the agents are able to optimize for a perfect score on generation 72.
 </p>
 
 <h2>Trained Agent Playing</h2>
 
-https://user-images.githubusercontent.com/94034810/141233933-9f59d17a-ec49-49fc-9114-75b2b9c29bd6.mp4
+<p align="center">
+<video src="https://user-images.githubusercontent.com/94034810/141233933-9f59d17a-ec49-49fc-9114-75b2b9c29bd6.mp4">
+</video>
+</p>
 
 <h2>Conclusions</h2>
 <p>
-  The goal of the project was achieved and agent that is capable of scoring a perfect game was trained in 72 generations!  However, the agent does not play optimally, taking long periods of not scoring any points before finding the brick when the screen is almost cleared.  There is room for improvement.
+	The goal of the project was achieved and an agent that is capable of scoring a perfect game was trained in 72 generations!  However, the agent does not play optimally, taking long periods of not scoring any points before finding the brick when the screen is almost cleared.  There is room for improvement.
   
   <h3>Possible Enhancements</h3>
   <ul>
