@@ -8,7 +8,7 @@ Reinforcement Learning using a Genetic Algorithm to train a neural network to pl
 <br>The training example uses a 24 input nodes for the game state
 <br>1 hidden layer with 16 nodes with ReLU activation functions
 <br>and a 3 node output layer with softmax activation.
-![Network](https://user-images.githubusercontent.com/94034810/141222394-a0837a16-f3ba-409c-a3da-b2d8ec996627.png)
+![Network](https://user-images.githubusercontent.com/94034810/141222394-a0837a16-f3ba-409c-a3da-b2d8ec996627.png | width=50%)
 
 
 
