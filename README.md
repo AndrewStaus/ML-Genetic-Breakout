@@ -102,7 +102,7 @@
 <p>
 	Due to  games running simultaneously, system resources are taxed by rending the graphics.
 	To further speed up training time, the games are run in headless 
-	mode with graphics and interface disabled durring training so that the CPU resources can be used more efficiently.
+	mode with graphics and interface disabled during training so that the CPU resources can be used more efficiently.
 </p>
 
 
