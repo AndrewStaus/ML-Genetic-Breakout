@@ -9,7 +9,7 @@ Reinforcement Learning using a Genetic Algorithm to train a neural network to pl
 <br>1 hidden layer with 16 nodes with ReLU activation functions
 <br>and a 3 node output layer with softmax activation.
 
-<img src="https://user-images.githubusercontent.com/94034810/141222394-a0837a16-f3ba-409c-a3da-b2d8ec996627.png" width="250" height = "250">
+<img src="https://user-images.githubusercontent.com/94034810/141222394-a0837a16-f3ba-409c-a3da-b2d8ec996627.png" width="500" height = "500">
 
 
 
