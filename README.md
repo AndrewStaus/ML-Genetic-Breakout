@@ -52,7 +52,7 @@
     <li>Ball X Vector</li>
     <li>Ball Y Vector</li>
     <li>Count of active blocks in each row</li>
-
+  </ul>
 
 
   
