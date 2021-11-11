@@ -92,15 +92,16 @@ https://user-images.githubusercontent.com/94034810/141233933-9f59d17a-ec49-49fc-
 
 <h2>Postmortem</h2>
 <p>
-While training was realativly fast --only taking 72 generations-- the agent does not play optimally.
-Some possible solutions:
-<ul>
-  <li><b>Alter Fitness Function:</b> The current fitness function is only based off high scores.  Indirectly the time limit imposed on the agent to make a score does influence them to not waste time, but a bonus score for screen clear times would likely improve performance</li>
-  <li><b>Add more inputs:</b> The agents knowledge of the gamestate is limited.  It only knows the number of active blocks in a row, it does not know what column the blocks are in.  Increasing the number of inputs would likely help the network, but would also greatly increase training time as there will be many more weights and biases.</li>
+  While training was realativly fast --only taking 72 generations-- the agent does not play optimally.
+  Some possible solutions:
+  <ul>
+    <li><b>Alter Fitness Function:</b> The current fitness function is only based off high scores.  Indirectly the time limit imposed on the agent to make a score does influence them to not waste time, but a bonus score for screen clear times would likely improve performance</li>
+    <li><b>Add more inputs:</b> The agents knowledge of the gamestate is limited.  It only knows the number of active blocks in a row, it does not know what column the blocks are in.  Increasing the number of inputs would likely help the network, but would also greatly increase training time as there will be many more weights and biases.</li>
     <li><b>Add more hidden layers or nodes:</b> a single 16 node hidden layer is quite shallow.  Increasing the complexity may allow the agents to learn more sophisticated functions.  However, this would also greatly increase training times.</li>
+  <ul>
 </p>
 
-<h2>File Descriptions</h2>
+<h1>File Descriptions</h1>
 <p>
   <ul>
     <li><b>Breakout.py: </b>This is the human playable game.  The agents make it look easy, give it a go for yourself!</li>
