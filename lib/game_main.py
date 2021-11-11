@@ -51,13 +51,13 @@ def draw_window(screen, myfont):
 
     screen.fill(game.background)
     scoreboard = myfont.render(str(game.score), False, (0, 0, 0))
-    livesboard = myfont.render(f'Lives: {game.lives}', False, (0, 0, 0))
-    levelboard = myfont.render(f'Level: {game.level}', False, (0, 0, 0))
+    livesboard = myfont.render(f'LIVES: {game.lives}', False, (0, 0, 0))
+    levelboard = myfont.render(f'LEVEL: {game.level}', False, (0, 0, 0))
  
 
-    screen.blit(scoreboard,(SCREEN_WIDTH // 2 - scoreboard.get_width() // 2 ,0))
-    screen.blit(livesboard,(0,0))
-    screen.blit(levelboard,(SCREEN_WIDTH - levelboard.get_width(),0))
+    screen.blit(scoreboard,(SCREEN_WIDTH // 2 - scoreboard.get_width() // 2 ,5))
+    screen.blit(livesboard,(0,5))
+    screen.blit(levelboard,(SCREEN_WIDTH - levelboard.get_width(),5))
 
 
     pygame.draw.rect(screen, BLACK, paddle)
@@ -93,7 +93,7 @@ def main(graphics = True, agent= None):
     if graphics:
         pygame.display.set_caption("Breakout")
         pygame.font.init()
-        myfont = pygame.font.SysFont('Ariel', 30)
+        myfont = pygame.font.Font(r'.\lib\font\font.ttf', 20)
         screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
         game.FPS = FPS
         

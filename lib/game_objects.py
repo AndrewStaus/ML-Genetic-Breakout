@@ -13,7 +13,6 @@ class Game:
         self.MAX_LEVELS = MAX_LEVELS
         self.SCREEN_WIDTH = SCREEN_WIDTH
         self.SCREEN_HEIGHT = SCREEN_HEIGHT
-        
         self.background = random_color(175,200)
         self.score = 0
         self.lives = INITIAL_LIVES
