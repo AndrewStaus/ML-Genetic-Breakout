@@ -35,11 +35,11 @@
 <h3>Libraries</h3>
 <p>
   <ul>
-    <li>Numpy: Vectorized calculations is key speed up hypothisis processing, greatly reducing training time</li>
-    <li>Pickle: Serialize and save the agents for later use</li>
-    <li>Pandas: Export log data to dataframes</li>
-    <li>Pygame: Create a basic Breakout like game</li>
-    <li>Concurrent Futures:  Enable multi-processing to allow mutliple agents to play at the same time durring training</li>
+    <li><b>Numpy</b>: Vectorized calculations is key speed up hypothisis processing, greatly reducing training time</li>
+    <li><b>Pickle:</b> Serialize and save the agents for later use</li>
+    <li><b>Pandas:</b> Export log data to dataframes</li>
+    <li><b>Pygame:</b> Create a basic Breakout like game</li>
+    <li><b>Concurrent Futures:</b>  Enable multi-processing to allow mutliple agents to play at the same time durring training</li>
   </ul>
   
   <h3>Layers</h3>
