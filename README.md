@@ -1,5 +1,5 @@
 <h1>Genetic Breakout</h1>
-<h2>Abstract</h2>
+<h2>Goal</h2>
 <p>
   Breakout is a classic game created by <i>Attari</i> in 1976.  The goal of the game is to use a <i>Pong</i> like ball and paddle to hit bricks at the top of the screen to break them.  Breaking a break awards a point.
   Once all breaks are broken the game advances to the next screen.
