@@ -42,8 +42,8 @@
     <li>Concurrent Futures:  Enable multi-processing to allow mutliple agents to play at the same time durring training</li>
   </ul>
   
-  <h3>Input Layer</h3>
-  Input layer consists of 25 nodes:
+  <h3>Layers</h3>
+  <b>Input layer</b> consists of 25 nodes:
   <ul>
     <li>Paddle X Position</li>
     <li>Ball X Position</li>
@@ -52,18 +52,26 @@
     <li>Ball Y Vector</li>
     <li>Count of active blocks in each row (20 values)</li>
   </ul>
-
-
+  
+  <b>Hidden layer</b> has 16 nodes using ReLU activations
+  
+  <b>Output layer</b> has 3 nodes with Softmax activations:
+  <ul>
+  <li>Move Paddle Left ('<-' input)</li>
+  <li>Move Paddle Right ('->' input)</li>
+  <li>Do Nothing</li>
+  </ul>
+  
+  For each frame the network is given the input and makes a decision what action to take.  Softmax activation ensures that conflicting actions are not taken.
   
 </p>
-<br>The training example uses a 25 input nodes for the game state
-<br>1 hidden layer with 16 nodes with ReLU activation functions
-<br>and a 3 node output layer with softmax activation.
-
 <p align="left">
   <img src="https://user-images.githubusercontent.com/94034810/141235668-ab609c06-6714-469a-8709-47816371273e.png">
 </p>
 
+
+<h2>Training</h2>
+<img src="https://user-images.githubusercontent.com/94034810/141082768-7519e5b3-fba8-4f3a-a0bb-bc955b0052ff.png">
 
 
 https://user-images.githubusercontent.com/94034810/141233933-9f59d17a-ec49-49fc-9114-75b2b9c29bd6.mp4
@@ -72,8 +80,6 @@ https://user-images.githubusercontent.com/94034810/141233933-9f59d17a-ec49-49fc-
 
 
   
-<h1>Training Log</h1>
-<img src="https://user-images.githubusercontent.com/94034810/141082768-7519e5b3-fba8-4f3a-a0bb-bc955b0052ff.png">
 <h2>Notes:</h2>
 <br>Generation 44 completes first screen
 <br>Generation 72 completes perfect game (15 screens)
