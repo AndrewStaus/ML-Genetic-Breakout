@@ -1,4 +1,4 @@
-'''Script to load a trained agent to play the game'''
+'''Script to load a trained agent to play the game test commit'''
 
 from Train import worker
 import pickle
