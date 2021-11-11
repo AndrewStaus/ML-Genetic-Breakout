@@ -30,13 +30,15 @@ class Game:
     def changeBackground(self):
         self.BACKGROUND = random_color(175,200)
 
+
     def activeBlocks(self):
         active_blocks = 0
         for block in self.blocks:
             if block.active:
                 active_blocks += 1
         return active_blocks
-    
+
+
     def getBlockStatus(self):
         status = [int(block.active) for block in self.blocks]
         block_values = []
@@ -51,7 +53,6 @@ class Game:
         return list(block_values.sum(axis=0) / 20)
 
 
-
 class Block(pygame.Rect):
 
     def __init__(self, active, color:tuple, *args, **kwargs):
@@ -60,23 +61,18 @@ class Block(pygame.Rect):
         super().__init__(*args, **kwargs)
 
 
-
-
 class Paddle(pygame.Rect):
     def __init__(self, left:float, top: float, width: float, height: float):
         self.initial_left = left
  
         super().__init__(left, top, width, height)
 
+
     def reset(self):
         self.x = self.initial_left
 
 
-
-
-
 class Projectile(pygame.Rect):
-
     def __init__(self, paddle, game, projectile_size):
         self.game = game
         self.paddle = paddle
@@ -84,9 +80,11 @@ class Projectile(pygame.Rect):
         self.reset()
         super().__init__(paddle.x + paddle.width//2 - self.projectile_size//2, paddle.y-paddle.height-10, self.projectile_size, self.projectile_size)
 
+
     def move(self):
         self.y -= self.game.projectile_speed * self.y_direction
         self.x -= self.game.projectile_speed * -self.x_direction
+
 
     def reset(self):
             self.y_direction = 1

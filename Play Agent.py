@@ -1,5 +1,10 @@
-'''Script to load a trained agent to play the game'''
-
+'''
+<h1>Play Agent.py</h1>
+<p>
+This will launch the game under control of one of the trained agents.
+<br>Graphics are enabled so you can watch it play
+</p>
+'''
 from Train import worker
 import pickle
 

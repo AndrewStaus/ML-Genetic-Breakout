@@ -1,6 +1,16 @@
-'''Run 256 games with different agents and then bread the generation to create the next generation.
-Top Agent is saved every generation, Best Agent is saved each time a new highscore is achieved'''
+'''
+<h1>Train.py</h1>
+<p>
+This is the main training script.  It will train a new batch of agents.
+<br>Results will be printed to the console and logged.
 
+<ul>
+<li>Population of 256 agents will be run through a genetic algorithm to create the next generation</li>
+<li>Top Agent is saved every generation, Best Agent is saved each time a new highscore is achieved</li>
+<li>Training will continue until the user quits</li>
+</ul>
+</p>
+'''
 from pandas.core.frame import DataFrame
 from lib.neural_network import Tools
 from concurrent.futures import ProcessPoolExecutor

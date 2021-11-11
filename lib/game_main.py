@@ -6,11 +6,12 @@ import numpy as np
 from lib.game_objects import *
 from lib.game_handlers import *
 
-
+#################GAME SETTINGS######################
 INITIAL_LIVES = 3
 INITIAL_LAYERS = 3
 MAX_LEVELS = 15
 FPS = 120
+###################################################
 
 SCREEN_WIDTH, SCREEN_HEIGHT = 600, 800
 BLOCK_WIDTH, BLOCK_HEIGHT = 50, 20
@@ -47,6 +48,7 @@ def setup(newgame:bool = False):
                 block = Block(False, layer_color, i*BLOCK_WIDTH, j*BLOCK_HEIGHT + 100 + j*5, BLOCK_WIDTH, BLOCK_HEIGHT)
                 game.blocks.append(block)
 
+
 def draw_window(screen, myfont):
 
     screen.fill(game.background)
@@ -54,11 +56,9 @@ def draw_window(screen, myfont):
     livesboard = myfont.render(f'LIVES: {game.lives}', False, (0, 0, 0))
     levelboard = myfont.render(f'LEVEL: {game.level}', False, (0, 0, 0))
  
-
     screen.blit(scoreboard,(SCREEN_WIDTH // 2 - scoreboard.get_width() // 2 ,5))
     screen.blit(livesboard,(0,5))
     screen.blit(levelboard,(SCREEN_WIDTH - levelboard.get_width(),5))
-
 
     pygame.draw.rect(screen, BLACK, paddle)
     pygame.draw.rect(screen, BLACK, projectile)
@@ -68,6 +68,7 @@ def draw_window(screen, myfont):
             pygame.draw.rect(screen, block.COLOR, block, border_radius=10)
 
     pygame.display.update()
+
 
 def output():
 
@@ -83,12 +84,8 @@ def output():
     return output
 
 
-
 def main(graphics = True, agent= None):
-
-    
     pygame.init()
-
 
     if graphics:
         pygame.display.set_caption("Breakout")
@@ -97,7 +94,6 @@ def main(graphics = True, agent= None):
         screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
         game.FPS = FPS
         
-
     setup(newgame=True)
 
     if agent:
@@ -107,9 +103,7 @@ def main(graphics = True, agent= None):
     clock = pygame.time.Clock()
     run = True
     frames_since_last_point = 0
-    while run:
-
-        
+    while run:     
         clock.tick(game.FPS)
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -122,8 +116,6 @@ def main(graphics = True, agent= None):
             if event.type == DEATH:
                 game.lives -= 1
                 frames_since_last_point = 0
-
-
 
         keys_pressed = pygame.key.get_pressed()
         handle_input(keys_pressed, paddle, projectile, game)
@@ -148,7 +140,6 @@ def main(graphics = True, agent= None):
                 return(game.score)
             else:
                 setup(newgame = True)
-                
 
         if game.level >= MAX_LEVELS +1:
             if agent:
@@ -159,14 +150,11 @@ def main(graphics = True, agent= None):
             game.score = 0
             setup(newgame=True)
 
-
         if game.activeBlocks() <= 0:
             game.level += 1
             setup()
 
-
         if graphics:
             draw_window(screen, myfont)
-
 
     pygame.quit()
