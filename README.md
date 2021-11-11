@@ -13,12 +13,18 @@
 <p>
   The algorithm being used is broken into 4 steps
   <ul>
-    <li>Determine Fitness</li>
+    <li>Determine Fitness of Agents</li>
     <li>Selection</li>
     <li>Crossover</li>
     <li>Mutation</li>
   </ul>
+  
+  <h3>Determine Fitness of Agents</h3>
+  <h3>Selection/h3>
+  <h3>Crossover</h3>
+  <h3>Mutation</h3>
 </p>
+
 
 
 <br>The training example uses a 25 input nodes for the game state
