@@ -100,9 +100,9 @@
 	<img src="https://user-images.githubusercontent.com/94034810/141365553-86b42305-2977-417d-b4b0-b9eb9f220b9d.png", title="Multi-Processing">
 </p>
 <p>
-	Because there are so many games running simultaneously system resources are taxed by rending the graphics.
+	Due to  games running simultaneously, system resources are taxed by rending the graphics.
 	To further speed up training time, the games are run in headless 
-	mode with graphics and interface disabled so that the CPU resources can be used more efficiently.
+	mode with graphics and interface disabled durring training so that the CPU resources can be used more efficiently.
 </p>
 
 
