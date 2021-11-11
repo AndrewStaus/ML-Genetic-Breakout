@@ -94,7 +94,7 @@ https://user-images.githubusercontent.com/94034810/141233933-9f59d17a-ec49-49fc-
 
 <h2>Conclusions</h2>
 <p>
-  The goal of the project was achieved and agent that is capable of scoring a perfect game was trained in 72 generations!  However, the agent does not play optimally, taking long periods of not scoring any points before finding the brick when the screen is almost cleared.  There is a lot of room for improvement.
+  The goal of the project was achieved and agent that is capable of scoring a perfect game was trained in 72 generations!  However, the agent does not play optimally, taking long periods of not scoring any points before finding the brick when the screen is almost cleared.  There is room for improvement.
   
   <h3>Possible Enhancements</h3>
   <ul>
