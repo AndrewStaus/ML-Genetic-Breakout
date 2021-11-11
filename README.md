@@ -171,7 +171,7 @@ Playback is not sped up; the framerate is bottlenecked mainly by the hypothesis 
 		<li><b>Breakout.py: </b>This is the human playable game.  The agents make it look easy, give it a go for yourself!</li>
 		<li><b>Train.py: </b>This is the main training script.  It will train a new batch of agents.  Results will be printed to the console and logged</li>
 		<li><b>Play Agent.py:</b> This will launch the game under control of one of the trained agents.  Graphics are enabled so you can watch it play</li>
-		<li><b>Result Notebook.py:</b> Outputs the log to a graph so you can have a visual reference of training performance.
+		<li><b>Training Results.ipynb:</b> Outputs the log to a graph so you can have a visual reference of training performance.
 			Can be accessed while training is in progress</li>
 	</ul>
 </p>
