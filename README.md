@@ -1,33 +1,34 @@
 <h1>Genetic Breakout</h1>
-<h2>Goal</h2>
+<h2>Abstract</h2>
 <p>
   Breakout is a classic game created by <i>Attari</i> in 1976.  The goal of the game is to use a <i>Pong</i> like ball and paddle to hit bricks at the top of the screen to break them.  Breaking a break awards a point.
-  Once all breaks are broken the game advances to the next screen.
+  Once all bricks are broken the game advances to the next screen.
   In this version of the game, each new screen adds an additional row of bricks to increase difficulty.  Once 15 levels are completed the game ends.
   
-  The Objective of this project is to use a Genetic Algorithm to train a neural network (the agent) to achieve a perfect score for the game.
-  This is a type of unsupervised learning called <i>reinforcement learning</i> that will "reward" the best agents by preferring them as parents when the next generation is created.
+  The objective of this project is to use a Genetic Algorithm to train a neural network (the agent) to achieve a perfect score for the game (1800).
+  I will use a type of unsupervised learning called reinforcement learning that will "reward" the best agents by preferring them as parents when the next generation is created.
 </p>
 
 <h2>The Genetic Algorithm</h2>
 <p>
-  The algorithm being used is broken into 4 steps
-  <ul>
+  A genetic algorithm will be used in this implementation of reinforcement learning.
+  Genetic algorithms typically have has four main subroutines:
+  <ol>
     <li>Determine Fitness of Agents</li>
     <li>Selection</li>
     <li>Crossover</li>
     <li>Mutation</li>
-  </ul>
+  </ol>
   These steps ensures that the agent pool stays diverse so that new approaches are tried, and the agents do not become stuck in local optima.
   
 
   <h3>Determine Fitness of Agents</h3>
-  Fitness is a measure of how well an agent performed a desired task.  If a fitness function does not accurately reward desired activity, agents may be slow to learn or not ever progress.
-  To determine fitness the all agents in a generation play the game and their fitness is determined by the score they achieve.  If an agent gets stuck for too long without breaking a block, the agent loses a life ensuring that there is not an incentive for the agents to enter infinite loops.
+  Fitness is a measure of how well an agent performed a desired task.  If a fitness function does not accurately reward desired activity, agents may be slow to learn or not even progress.
+  To determine fitness, all agents in a generation play the game and their fitness is determined by the score they achieve.  If an agent gets stuck for too long without breaking a block, the agent loses a life ensuring that there is not an incentive for the agents to enter infinite loops.
   <h3>Selection</h3>
-  Once fitness is determined, agents are selected stochastically, weighted on their fitness.  Agents with higher fitness are more likely to be chosen more often.  Agents can be chosen more than once.
+  Once fitness is determined, agents are selected stochastically, weighted by their fitness.  Agents with higher fitness are more likely to be chosen more often.  Agents can be chosen more than once.
   <h3>Crossover</h3>
-  Once two agents <i>(parents)</i> are selected, crossover occurs.  Each weight and bias are given a 50% chance to be selected from either agent.  The new resulting agent <i>(child)</i> has 50% of the weights from one parent, and 50% of the weights from the other.
+  Once two agents <i>(parents)</i> are selected, crossover occurs.  Each weight and bias are given a 50% chance to be selected from either parent.  The new resulting agent <i>(child)</i> has about half of the weights from one parent, and about half of the weights from the other.
   <h3>Mutation</h3>
   The new agent <i>(child)</i> then undergoes mutation.  A small portion of the weights and biases are chosen at random for change, and then slightly tweaked.
 </p>
@@ -64,7 +65,8 @@
   <li>Do Nothing</li>
   </ul>
   
-  For each frame the network is given the input and makes a decision what action to take.  Softmax activation ensures that conflicting actions are not taken.
+  For each game clock cycle (frame) the network is given the input and makes a decision what action to take.  Softmax activation ensures that conflicting actions are not possible.
+  
   <img src="https://user-images.githubusercontent.com/94034810/141235668-ab609c06-6714-469a-8709-47816371273e.png">
 </p>
 
@@ -76,7 +78,7 @@
   <ul>
   <li><b>Fitness:</b> Score^2.  Using an exponential function for fitness causes agents that perform slightly better to have a much larger probability in selected than their close competitors.  This helps keep the agent pool healthy</li>
   <li><b>Muration Rate:</b> 25% of the weights and biases will be altered on an agent during the mutation step</li>
-  <li><b>Mutation Scale:</b> 0.10, this will cause a relatively small change to occur  on the weights and biases that are chosen randomly for mutation</li>
+  <li><b>Mutation Scale:</b> 0.10 will cause a relatively small change to occur  on the weights and biases that are chosen randomly for mutation</li>
   </ul>
   
   
@@ -93,7 +95,8 @@ https://user-images.githubusercontent.com/94034810/141233933-9f59d17a-ec49-49fc-
 <h2>Postmortem</h2>
 <p>
   While training was realativly fast --only taking 72 generations-- the agent does not play optimally.
-  Some possible solutions:
+  
+  <h3>Possible Enhancements</h3>
   <ul>
     <li><b>Alter Fitness Function:</b> The current fitness function is only based off high scores.  Indirectly the time limit imposed on the agent to make a score does influence them to not waste time, but a bonus score for screen clear times would likely improve performance</li>
     <li><b>Add more inputs:</b> The agents knowledge of the gamestate is limited.  It only knows the number of active blocks in a row, it does not know what column the blocks are in.  Increasing the number of inputs would likely help the network, but would also greatly increase training time as there will be many more weights and biases.</li>
