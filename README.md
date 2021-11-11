@@ -7,7 +7,7 @@
 	In this version of the game, each new screen adds an additional row of bricks to increase difficulty.  Once 15 levels are completed the game ends.
 </p>
 <p>
-	The objective of this project is to use a Genetic Algorithm to train a neural network (the agent) to achieve a perfect score for the game (1800 points).
+	The objective of this project is to use a genetic algorithm to train a neural network (the agent) to achieve a perfect score for the game (1800 points).
 	I will use a type of unsupervised learning called reinforcement learning that will "reward" the best agents by preferring them as parents
 	when the next generation is created.
 </p>
