@@ -35,14 +35,26 @@
 <h3>Libraries</h3>
 <p>
   <ul>
-    <li>Numpy: Vectorized calculations is key speed up hypothisis processing.  Greatly reduces training and playback times</li>
+    <li>Numpy: Vectorized calculations is key speed up hypothisis processing, greatly reducing training time</li>
     <li>Pickle: Serialize and save the agents for later use</li>
     <li>Pandas: Export log data to dataframes</li>
     <li>Pygame: Create a basic Breakout like game</li>
     <li>Concurrent Futures:  Enable multi-processing to allow mutliple agents to play at the same time durring training</li>
   </ul>
- 
- 
+  
+  <h3>Input Layer</h3>
+  Input layer consists of 25 nodes.
+  <ul>
+
+    <li>Paddle X Position</li>
+    <li>Ball X Position</li>
+    <li>Ball Y Position</li>
+    <li>Ball X Vector</li>
+    <li>Ball Y Vector</li>
+    <li>Count of active blocks in each row</li>
+
+
+
   
 </p>
 <br>The training example uses a 25 input nodes for the game state
