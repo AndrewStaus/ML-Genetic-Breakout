@@ -85,8 +85,8 @@
 	</ul>
 </p>
 <p>
-	For each game clock cycle <i>(frame)</i> the agent is given the input and makes a decision what action to take <i>(hypothesis)</i>.
-	Softmax activation ensures that conflicting actions are not possible.
+	For each clock cycle <i>(frame)</i> of the game, the input values are propagated through the agent network.
+	The node with the highest activation in the output layer is used as the control input for the game.
 </p>
 <p align="center">
 	<img src="https://user-images.githubusercontent.com/94034810/141366921-9dd698c9-7ddc-473f-bc22-68b6f2b36cc6.png" title="Network Design">
