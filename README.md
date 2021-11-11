@@ -65,12 +65,8 @@
   </ul>
   
   For each frame the network is given the input and makes a decision what action to take.  Softmax activation ensures that conflicting actions are not taken.
-  
-</p>
-<p align="left">
   <img src="https://user-images.githubusercontent.com/94034810/141235668-ab609c06-6714-469a-8709-47816371273e.png">
 </p>
-
 
 <h2>Training</h2>
 <p>
@@ -95,9 +91,21 @@
 https://user-images.githubusercontent.com/94034810/141233933-9f59d17a-ec49-49fc-9114-75b2b9c29bd6.mp4
 
 <h2>Postmortem</h2>
+<p>
 While training was realativly fast --only taking 72 generations-- the agent does not play optimally.
 Some possible solutions:
 <ul>
   <li><b>Alter Fitness Function:</b> The current fitness function is only based off high scores.  Indirectly the time limit imposed on the agent to make a score does influence them to not waste time, but a bonus score for screen clear times would likely improve performance</li>
   <li><b>Add more inputs:</b> The agents knowledge of the gamestate is limited.  It only knows the number of active blocks in a row, it does not know what column the blocks are in.  Increasing the number of inputs would likely help the network, but would also greatly increase training time as there will be many more weights and biases.</li>
     <li><b>Add more hidden layers or nodes:</b> a single 16 node hidden layer is quite shallow.  Increasing the complexity may allow the agents to learn more sophisticated functions.  However, this would also greatly increase training times.</li>
+</p>
+
+<h2>File Descriptions</h2>
+<p>
+  <ul>
+    <li><b>Breakout.py: </b>This is the human playable game.  The agents make it look easy, give it a go for yourself!</li>
+    <li><b>Train.py: </b>This is the main training script.  It will train a new batch of agents.  Results will be printed to the consol and logged</li>
+    <li><b>Play Agent.py:</b> This will launch the game under control of one of the trained agents.  Graphics are enabled so you can see them play.</li>
+    <li><b>Result Notebook.py:</b> Outputs the log to a graph so you can have a visiual reference of training performance.  Can be accessed while training is in progress</li>
+  </ul>
+</p>
