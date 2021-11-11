@@ -5,8 +5,8 @@
   Once all breaks are broken the game advances to the next screen.
   In this version of the game, each new screen adds an additional row to increase difficulty.  Once 15 levels are completed the game ends.
   
-  The Objective of this project is to use a Genetic Algorithm to train a nural network (the agent) to achieve a perfect score for the game.
-  This is a type of reinforcement learning that will "reward" the best agents by preffering them as parents when the next generation is created.
+  The Objective of this project is to use a Genetic Algorithm to train a neural network (the agent) to achieve a perfect score for the game.
+  This is a type of reinforcement learning that will "reward" the best agents by preferring them as parents when the next generation is created.
 </p>
 
 <h2>The Genetic Algorithm</h2>
@@ -19,11 +19,11 @@
     <li>Mutation</li>
   </ul>
   
-  An initial generation is created by creating a number of nural networks with random weight initilizations.
+  An initial generation is created by creating a number of neural networks with random weight initializations.
   <h3>Determine Fitness of Agents</h3>
-  The Generation plays the game and their fitness is determined by the score they achieve.  If an angent gets stuck for too long without breaking a block, the game is also ended ensuring that there are no infinite loops.
+  The Generation plays the game and their fitness is determined by the score they achieve.  If an agent gets stuck for too long without breaking a block, the game is also ended ensuring that there are no infinite loops.
   <h3>Selection</h3>
-  Once fitness is determined, agents are selected stocastically weighted on their fitness.  If an agent scored higher, they are more likely to be chosen.  Agents can be chosen more than once.
+  Once fitness is determined, agents are selected stochastically weighted on their fitness.  If an agent scored higher, they are more likely to be chosen.  Agents can be chosen more than once.
   <h3>Crossover</h3>
   Once two agents are selected, crossover occurs.  Each weight and bias is given a 50% chance to be selected from either agent.  The new resulting agent has 50% of the weights from one parent, and 50% of the weights from the other.
   <h3>Mutation</h3>
@@ -35,11 +35,11 @@
 <h3>Libraries</h3>
 <p>
   <ul>
-    <li><b>Numpy</b>: Vectorized calculations is key speed up hypothisis processing, greatly reducing training time</li>
+    <li><b>Numpy</b>: Vectorized calculations is key speed up hypothesis  processing, greatly reducing training time</li>
     <li><b>Pickle:</b> Serialize and save the agents for later use</li>
-    <li><b>Pandas:</b> Export log data to dataframes</li>
+    <li><b>Pandas:</b> Export log data to data frames</li>
     <li><b>Pygame:</b> Create a basic Breakout like game</li>
-    <li><b>Concurrent Futures:</b>  Enable multi-processing to allow mutliple agents to play at the same time durring training</li>
+    <li><b>Concurrent Futures:</b>  Enable multi-processing to allow multiple  agents to play at the same time during training</li>
   </ul>
   
   <h3>Layers</h3>
