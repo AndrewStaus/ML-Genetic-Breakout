@@ -32,7 +32,7 @@
 <br>and a 3 node output layer with softmax activation.
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/94034810/141222394-a0837a16-f3ba-409c-a3da-b2d8ec996627.png" width="500">
+  <img src="(https://user-images.githubusercontent.com/94034810/141234716-ea5c7765-de94-4740-ab7c-1125e6b3d3eb.png" width="500">
 </p>
 
 
