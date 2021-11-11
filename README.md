@@ -5,7 +5,7 @@
   Once all bricks are broken the game advances to the next screen.
   In this version of the game, each new screen adds an additional row of bricks to increase difficulty.  Once 15 levels are completed the game ends.
   
-  The objective of this project is to use a Genetic Algorithm to train a neural network (the agent) to achieve a perfect score for the game (1800).
+  The objective of this project is to use a Genetic Algorithm to train a neural network (the agent) to achieve a perfect score for the game (1800 points).
   I will use a type of unsupervised learning called reinforcement learning that will "reward" the best agents by preferring them as parents when the next generation is created.
 </p>
 
@@ -38,11 +38,11 @@
 <h3>Libraries</h3>
 <p>
   <ul>
-    <li><b>Numpy</b>: Vectorized calculations is key speed up hypothesis  processing, greatly reducing training time</li>
+    <li><b>Numpy</b>: Vectorized calculations speed up hypothesis processing, greatly reducing training time</li>
     <li><b>Pickle:</b> Serialize and save the agents for later use</li>
     <li><b>Pandas:</b> Export log data to data frames</li>
     <li><b>Pygame:</b> Create a basic Breakout like game</li>
-    <li><b>Concurrent Futures:</b>  Enable multi-processing to allow multiple  agents to play at the same time during training</li>
+    <li><b>Concurrent Futures:</b>  Enable multi-processing to allow multiple agents to play at the same time during training</li>
   </ul>
   
   <h3>Layers</h3>
@@ -56,7 +56,7 @@
     <li>Count of active blocks in each row (20 values)</li>
   </ul>
   
-  <b>Hidden layer</b> has 16 nodes using ReLU activations
+  <b>Hidden layer</b> has 16 nodes using ReLU activations.
   
   <b>Output layer</b> has 3 nodes with Softmax activations:
   <ul>
@@ -65,7 +65,7 @@
   <li>Do Nothing</li>
   </ul>
   
-  For each game clock cycle (frame) the network is given the input and makes a decision what action to take.  Softmax activation ensures that conflicting actions are not possible.
+  For each game clock cycle (frame) the agent is given the input and makes a decision what action to take.  Softmax activation ensures that conflicting actions are not possible.
 </p>
 <p align="center">
   <img src="https://user-images.githubusercontent.com/94034810/141257678-e6b6cb6b-b2c1-42d9-8c1f-a0553a5821b3.png">
