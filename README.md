@@ -153,13 +153,15 @@ Playback is not sped up; the framerate is bottlenecked mainly by the hypothesis 
 		<li><b>Alter fitness function:</b>
 			The current fitness function is only based off high scores.  Indirectly the time limit imposed on the agent to make a score does influence 
 			them to not waste time, but a bonus score for screen clear times would likely improve performance</li>
-		<li><b>Add more inputs:</b> The agent's knowledge of the game state is limited.
+		<li><b>More inputs:</b> The agent's knowledge of the game state is limited.
 			It only knows the number of active blocks in a row, it does not know what column the blocks 
 			are in.  Increasing the number of inputs would likely help the network but would also greatly
-			increase training time as there will be many more weights and biases.</li>
-		<li><b>Add more hidden layers or nodes:</b> a single 16 node hidden layer is quite shallow.
+			increase training time as there will be many more weights and biases</li>
+		<li><b>More hidden layers or nodes:</b> a single 16 node hidden layer is quite shallow.
 			Increasing the complexity may allow the agents to learn more sophisticated 
-			functions.  However, this would also greatly increase training times.</li>
+			functions.  However, this would also greatly increase training times</li>
+		<li><b>Memory:</b> The agent is only aware of the current state of the game and has no knowledge of previous states or actions it has taken.
+			Providing short term memory so that the agent has context for what they were doing in previous frames may also help it make better decisions</li>
 	</ul>
 </p>
 
@@ -168,7 +170,7 @@ Playback is not sped up; the framerate is bottlenecked mainly by the hypothesis 
 	<ul>
 		<li><b>Breakout.py: </b>This is the human playable game.  The agents make it look easy, give it a go for yourself!</li>
 		<li><b>Train.py: </b>This is the main training script.  It will train a new batch of agents.  Results will be printed to the console and logged</li>
-		<li><b>Play Agent.py:</b> This will launch the game under control of one of the trained agents.  Graphics are enabled so you can watch it play.</li>
+		<li><b>Play Agent.py:</b> This will launch the game under control of one of the trained agents.  Graphics are enabled so you can watch it play</li>
 		<li><b>Result Notebook.py:</b> Outputs the log to a graph so you can have a visual reference of training performance.
 			Can be accessed while training is in progress</li>
 	</ul>
