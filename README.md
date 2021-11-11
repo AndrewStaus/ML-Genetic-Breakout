@@ -20,7 +20,7 @@
   </ul>
   
   <h3>Determine Fitness of Agents</h3>
-  <h3>Selection/h3>
+  <h3>Selection</h3>
   <h3>Crossover</h3>
   <h3>Mutation</h3>
 </p>
