@@ -85,19 +85,19 @@
   
   <h3>Results</h3>
   Optimization was slow for the first 44 generations while the agents learned how to clear the first screen.  Once that hurdle was overcome, they were able to generalize to later levels spiking the learning rate.
+  
 <p align="center">
   <img src="https://user-images.githubusercontent.com/94034810/141082768-7519e5b3-fba8-4f3a-a0bb-bc955b0052ff.png">
 </p>
+
 <p>
   Top agent scores fluctuate during training, but the mean score of the population continues to increase.  There is a breakthrough around generation 60 and the agents are able to optimize for a perfect score on generation 72.
 </p>
 
 <h2>Trained Agent Playing</h2>
 
-<p align="center">
-<video src="https://user-images.githubusercontent.com/94034810/141233933-9f59d17a-ec49-49fc-9114-75b2b9c29bd6.mp4">
-</video>
-</p>
+https://user-images.githubusercontent.com/94034810/141233933-9f59d17a-ec49-49fc-9114-75b2b9c29bd6.mp4
+
 
 <h2>Conclusions</h2>
 <p>
@@ -105,7 +105,7 @@
   
   <h3>Possible Enhancements</h3>
   <ul>
-    <li><b>Alter Fitness Function:</b> The current fitness function is only based off high scores.  Indirectly the time limit imposed on the agent to make a score does influence them to not waste time, but a bonus score for screen clear times would likely improve performance</li>
+    <li><b>Alter fitness function:</b> The current fitness function is only based off high scores.  Indirectly the time limit imposed on the agent to make a score does influence them to not waste time, but a bonus score for screen clear times would likely improve performance</li>
     <li><b>Add more inputs:</b> The agents knowledge of the gamestate is limited.  It only knows the number of active blocks in a row, it does not know what column the blocks are in.  Increasing the number of inputs would likely help the network, but would also greatly increase training time as there will be many more weights and biases.</li>
     <li><b>Add more hidden layers or nodes:</b> a single 16 node hidden layer is quite shallow.  Increasing the complexity may allow the agents to learn more sophisticated functions.  However, this would also greatly increase training times.</li>
   </ul>
