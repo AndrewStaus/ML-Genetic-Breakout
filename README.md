@@ -78,7 +78,7 @@
   
   <h3>Hyper-Parameters</h3>
   <ul>
-  <li><b>Fitness:</b> Score^2.  Using an exponential function for fitness causes agents that perform slightly better will have a much larger probability to be selected than their close rivals.  This helps keep the agent pool healthy</li>
+  <li><b>Fitness:</b> Score^2.  Using an exponential function for fitness causes agents that perform slightly better to have a much larger probability in selected than their close competitors.  This helps keep the agent pool healthy</li>
   <li><b>Muration Rate:</b> 25% of the weights and biases will be altered on an agent during the mutation step</li>
   <li><b>Mutation Scale:</b> 0.10, this will cause a relatively small change to occur  on the weights and biases that are chosen randomly for mutation</li>
   </ul>
@@ -90,4 +90,14 @@
   Top agent scores fluctuate during training, but the mean score of the population continues to increase.  There is a breakthrough around generation 60 and the agents are able to optimize for a perfect score on generation 72.
 </p>
 
+<h2>Trained Agent Playing</h2>
+
 https://user-images.githubusercontent.com/94034810/141233933-9f59d17a-ec49-49fc-9114-75b2b9c29bd6.mp4
+
+<h2>Postmortem</h2>
+While training was realativly fast --only taking 72 generations-- the agent does not play optimally.
+Some possible solutions:
+<ul>
+  <li><b>Alter Fitness Function:</b> The current fitness function is only based off high scores.  Indirectly the time limit imposed on the agent to make a score does influence them to not waste time, but a bonus score for screen clear times would likely improve performance</li>
+  <li><b>Add more inputs:</b> The agents knowledge of the gamestate is limited.  It only knows the number of active blocks in a row, it does not know what column the blocks are in.  Increasing the number of inputs would likely help the network, but would also greatly increase training time as there will be many more weights and biases.</li>
+    <li><b>Add more hidden layers or nodes:</b> a single 16 node hidden layer is quite shallow.  Increasing the complexity may allow the agents to learn more sophisticated functions.  However, this would also greatly increase training times.</li>
