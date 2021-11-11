@@ -33,11 +33,13 @@
 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/94034810/141222394-a0837a16-f3ba-409c-a3da-b2d8ec996627.png" width="500">
-</p>
 
 
 https://user-images.githubusercontent.com/94034810/141082558-a9427023-5a3d-40bb-b583-cbd69a21dea8.mp4
 
+</p>
+
+  
 <h1>Training Log</h1>
 <img src="https://user-images.githubusercontent.com/94034810/141082768-7519e5b3-fba8-4f3a-a0bb-bc955b0052ff.png">
 <h2>Notes:</h2>
