@@ -19,10 +19,15 @@
     <li>Mutation</li>
   </ul>
   
+  An initial generation is created by creating a number of nural networks with random weight initilizations.
   <h3>Determine Fitness of Agents</h3>
+  The Generation plays the game and their fitness is determined by the score they achieve.  If an angent gets stuck for too long without breaking a block, the game is also ended ensuring that there are no infinite loops.
   <h3>Selection</h3>
+  Once fitness is determined, agents are selected stocastically weighted on their fitness.  If an agent scored higher, they are more likely to be chosen.  Agents can be chosen more than once.
   <h3>Crossover</h3>
+  Once two agents are selected, crossover occurs.  Each weight and bias is given a 50% chance to be selected from either agent.  The new resulting agent has 50% of the weights from one parent, and 50% of the weights from the other.
   <h3>Mutation</h3>
+  The new agent then undergoes mutation.  A small portion of the weights and biases are chosen at random for change, and then slightly tweaked.
 </p>
 
 
