@@ -1,4 +1,4 @@
-'''#Neural Network
+'''# Neural Network
 Deep neural network library, includes support for training through back propagation
 as well as reinforcement learning.
 Implemented with a scikit learn like api for ease of use.
