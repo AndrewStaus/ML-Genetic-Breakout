@@ -72,6 +72,15 @@ class Activation:
             raise ValueError('Activation function not supported')          
 
 class DeepNeuralNetwork:
+    """Create a Neural Network
+    \nconstructor accepts 2 keyword arguments:
+    \nconfig: expects a list definining the hidden layers and output specifications.
+    \nexample: 2 hidden ReLu layers with 10 softmax output:
+    \n [[16, 'relu'],[16, 'relu'],[10, 'softmax']]
+    \nexample: 4 hidden ReLu layers with 2 softmax output:
+    \n [[16, 'relu'],[32, 'relu'],[64, 'relu'],[8, 'relu'],[2, 'softmax']]
+    \n\ninput: expects the amount of nodes in the input layer as an integer"""
+
     def __init__(self,
                  config:list = [[16, 'relu'],[16, 'relu'],[10, 'softmax']],
                  input:int = 784):
@@ -98,6 +107,7 @@ class DeepNeuralNetwork:
                     self.activations.append(activation)
 
     def predict(self, x:list):
+        """Return hypothesis for a given input"""
         activation = np.array(x) #A0
         z = [np.zeros(activation.shape)]
         a = [activation]
@@ -175,7 +185,7 @@ class DeepNeuralNetwork:
 
 
     def train(self, x_train, y_train, x_val, y_val, epochs:int=10, l_rate:float=0.001, batch_size:int=20):
-
+        """Train network with back propagation using stochastic gradient descent"""
         self.epochs = epochs
         self.l_rate = l_rate
         self.batch_size = batch_size
@@ -190,14 +200,19 @@ class DeepNeuralNetwork:
 
 
     def save(self):
+        """return network parameters"""
         return self.weights, self.biases
 
 
     def load(self, weights_biases):
+        """load network parameters"""
         self.weights, self.biases = weights_biases
 
 
-    def mutate(self, rate=0.01, scale = 0.1):
+    def mutate(self, rate=0.25, scale = 0.1):
+        """Randomly select network parameters and change them by a random amount
+        \nRate decides what the likely hood is a specific value is changed
+        \nScale decides what the magnitude of the change will be if selected"""
 
         for i in range(len(self.weights)):
             for j in range(len(self.weights[i])):
@@ -213,6 +228,8 @@ class DeepNeuralNetwork:
 
 
     def crossover(self, spouse):
+        """Create a new neural network based on the parameters of two parents.
+        \nEach parameter has a 50% probability to be selected from either parent."""
         
         child = deepcopy(spouse)
 
