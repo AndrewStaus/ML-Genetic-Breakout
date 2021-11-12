@@ -1,20 +1,15 @@
-'''
-<h1>Neural Network</h1>
-<p>
+'''#Neural Network
 Deep neural network library, includes support for training through back propagation
 as well as reinforcement learning.
-<br> Implemented with a scikit learn like api for ease of use.
-</p>
-<br><h3>Supported activation functions:</h3>
-<p>
-    <ul>
-        <li>ReLu</li>
-        <li>Sigmoid</li>
-        <li>Tanh</li>
-        <li>Linear</li>
-        <li>Softmax</li>
-    </ul> 
-</p>
+Implemented with a scikit learn like api for ease of use.
+
+### Supported activation functions:
+
+- ReLU
+- Sigmoid
+- Tanh
+- Linear
+- Softmax
 '''
 import numpy as np
 from random import shuffle
@@ -24,6 +19,13 @@ from copy import deepcopy
 
 
 class Activation:
+    '''### Supported activation functions:
+    - ReLU: relu
+    - Sigmoid: sigmoid
+    - Tanh: tanh
+    - Linear: linear
+    - Softmax: softmax'''
+
     def relu(x, derivative:bool=False):
         if derivative:
             x = np.where(x < 0, 0, x)
@@ -72,14 +74,15 @@ class Activation:
             raise ValueError('Activation function not supported')          
 
 class DeepNeuralNetwork:
-    """Create a Neural Network
-    \nconstructor accepts 2 keyword arguments:
-    \nconfig: expects a list definining the hidden layers and output specifications.
-    \nexample: 2 hidden ReLu layers with 10 softmax output:
-    \n [[16, 'relu'],[16, 'relu'],[10, 'softmax']]
-    \nexample: 4 hidden ReLu layers with 2 softmax output:
-    \n [[16, 'relu'],[32, 'relu'],[64, 'relu'],[8, 'relu'],[2, 'softmax']]
-    \n\ninput: expects the amount of nodes in the input layer as an integer"""
+    """# Deep Neural Network
+    Create a Neural 
+    ### Kwargs:
+    - config: List definining the hidden layers and output specifications.
+        example: 2 hidden ReLu layers with 10 softmax output:
+            [[16, 'relu'],[16, 'relu'],[10, 'softmax']]
+        example: 4 hidden ReLu layers with 2 softmax output:
+            [[16, 'relu'],[32, 'relu'],[64, 'relu'],[8, 'relu'],[2, 'softmax']]
+    - input: Amount of nodes in the input layer"""
 
     def __init__(self,
                  config:list = [[16, 'relu'],[16, 'relu'],[10, 'softmax']],
@@ -107,7 +110,15 @@ class DeepNeuralNetwork:
                     self.activations.append(activation)
 
     def predict(self, x:list):
-        """Return hypothesis for a given input"""
+        """# Predict
+        Return hypothesis for a given input
+        
+        ### Args:
+            - x: Input
+
+        ### Returns:
+            Prediction
+        """
         activation = np.array(x) #A0
         z = [np.zeros(activation.shape)]
         a = [activation]
@@ -167,10 +178,10 @@ class DeepNeuralNetwork:
         changes_to_w, changes_to_b = changes_to_wb
 
         for weight, change in zip(self.weights,changes_to_w):
-            weight -= self.l_rate * change
+            weight -= self.apha * change
 
         for bias, change in zip(self.biases, changes_to_b):
-            bias -= 2 * self.l_rate * change
+            bias -= 2 * self.apha * change
 
 
     def compute_accuracy(self, x_val, y_val):
@@ -184,10 +195,23 @@ class DeepNeuralNetwork:
         return np.mean(predictions)
 
 
-    def train(self, x_train, y_train, x_val, y_val, epochs:int=10, l_rate:float=0.001, batch_size:int=20):
-        """Train network with back propagation using stochastic gradient descent"""
+    def train(self, x_train, y_train, x_val, y_val, epochs:int=10, alpha:float=0.001, batch_size:int=20):
+        """# Train
+        Train network with back propagation using stochastic gradient descent.
+
+        ### Args:
+            - x_train:
+            - y_train:
+            - x_val:
+            - y_val:
+        
+        ### Kwargs:
+            - epochs
+            - alpha: Learning Rate
+            - batch_size: 
+        """
         self.epochs = epochs
-        self.l_rate = l_rate
+        self.apha = alpha
         self.batch_size = batch_size
         self.batches = floor(len(y_train) / batch_size)
     
@@ -200,19 +224,33 @@ class DeepNeuralNetwork:
 
 
     def save(self):
-        """return network parameters"""
+        """# Save
+        return network parameters
+        
+        ### Returns:
+            weights, biases
+        """
         return self.weights, self.biases
 
 
     def load(self, weights_biases):
-        """load network parameters"""
+        """# Load
+        load network parameters
+        
+        ### Args:
+            - weights_biases: saved parameters
+        """
         self.weights, self.biases = weights_biases
 
 
     def mutate(self, rate=0.25, scale = 0.1):
-        """Randomly select network parameters and change them by a random amount
-        \nRate decides what the likely hood is a specific value is changed
-        \nScale decides what the magnitude of the change will be if selected"""
+        """#Mutate 
+        Randomly select network parameters and change them by a random amount
+        
+        ### Kwargs:
+            - rate: likelyhood is a specific parameter is changed
+            - scale: magnitude of the change will be if selected
+        """
 
         for i in range(len(self.weights)):
             for j in range(len(self.weights[i])):
@@ -228,8 +266,15 @@ class DeepNeuralNetwork:
 
 
     def crossover(self, spouse):
-        """Create a new neural network based on the parameters of two parents.
-        \nEach parameter has a 50% probability to be selected from either parent."""
+        """# Crossover
+        Create a new neural network based on the parameters of two parents.
+        Each parameter has a 50% probability to be selected from either parent.
+        
+        ### Args:
+            - spouse:
+
+        ### Returns:
+            Child neural network"""
         
         child = deepcopy(spouse)
 
@@ -254,29 +299,68 @@ class DeepNeuralNetwork:
 class Tools:
     class Genetic:
         def create_population(population_size:int, input_size:int, layer_config:list) -> list:
-            '''Return a population of networks'''
+            '''#Create Population
+            Return a population of networks with random initializations
+            
+            ### Args:
+                - population_size:
+                - input_size: Amount of nodes in the input layer
+                - layer_config: List definining the hidden layers and output specifications.
+                    example: 2 hidden ReLu layers with 10 softmax output:
+                        [[16, 'relu'],[16, 'relu'],[10, 'softmax']]
+                    example: 4 hidden ReLu layers with 2 softmax output:
+                        [[16, 'relu'],[32, 'relu'],[64, 'relu'],[8, 'relu'],[2, 'softmax']]
+
+            ### Returns:
+                list of agents'''
             return [DeepNeuralNetwork(input = input_size, config = layer_config) for _ in range(population_size)]
 
 
         def crossover(population: list, fitnesses: list) -> DeepNeuralNetwork:
-            '''For all members of a population, weighted stochastic selection of two individuals based on fitness.
-            \nWeights and Biases are then mixed with a 50% probability to be from either parent
-            \nReturns a single new newtwork'''
+            '''# Crossover
+            For all members of a population, weighted stochastic selection of two individuals based on fitness.
+            Parameters are then mixed with a 50% probability to be from either parent.
+
+            ### Args:
+                - population: list of agent population 
+                - fitness: list of fitness results for agents
+
+            ### Retuns:
+                Child newtwork'''
             network_x, network_y = choices(population, weights=fitnesses, k=2)
             return network_x.crossover(network_y)
 
 
         def selection(population: list, fitnesses:list, size=None) -> DeepNeuralNetwork:
-            '''Stocastic selection of an individual from the population weighted by fitness'''
+            '''# Selection
+            Stocastic selection of an individual from the population weighted by fitness
+            
+            ### Args:
+                - population: list of agents
+                - fitness: list of fitness scores for the population
+
+            ### Kwargs:
+                - size: Amount of selections. If none, then size of initial list is used.
+
+            ### Returns:
+                List of agents
+            '''
             if not size:
                 size=len(population)
             return choices(population, weights=fitnesses, k=size)
 
 
         def mutate(population: list, rate: float = 0.01, scale: float = 0.1) -> None:
-            '''In place stochastic adjustment of weights and biases for all members of a population.
-            \nRate indicates the odds that any given weight or bias is updated: 0.01 being 1% change to mutate, 0.1 being 10%
-            \nScale indicates the magnitude of the mutation'''
+            '''#Mutate
+            In place stochastic adjustment of weights and biases for all members of a population.
+            
+            ### Args:
+                - population: list of agent populations
+
+            ### Kwargs:
+                - rate: odds that any given weight or bias is updated: 0.01 being 1% change to mutate, 0.1 being 10%
+                - scale: magnitude of the mutation
+            '''
 
             for network in population:
                 network.mutate(rate=rate, scale=scale)

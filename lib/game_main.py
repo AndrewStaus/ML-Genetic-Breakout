@@ -1,4 +1,4 @@
-"""
+"""# Game Main
 Main Game library.  Launch from the 'Play Agent.py' script to play
 or 'Play Agent.py' script to watch a trained agent play.
 """

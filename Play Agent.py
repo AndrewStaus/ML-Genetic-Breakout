@@ -1,27 +1,30 @@
-'''
-<h1>Play Agent.py</h1>
-<p>
-This will launch the game under control of one of the trained agents.
-<br>Graphics are enabled so you can watch it play
-</p>
+'''# Play Agent
+Launch the game under control of one of the trained agents.
+Graphics are enabled so you can watch it play
 '''
 from Train import worker
 import pickle
 
 def play_top_agent():
-    '''play replay for the top agent of the generation'''
+    '''# Play Top Agent
+    Play replay for the top agent of the generation'''
     with open(r'.\trained_agents\top_agent.pickle', 'rb') as f:
         agent = pickle.load(f)
     worker(agent, graphics=True)
 
 def play_best_agent():
-    '''play replay for the best agent of the training session'''
+    '''# Play Best Agent
+    Play replay for the best agent of the training session'''
     with open(r'.\trained_agents\best_agent.pickle', 'rb') as f:
         agent = pickle.load(f)
     worker(agent, graphics=True)
 
 def play_agent(filepath):
-    '''play replay for a saved agent'''
+    '''# Play Agent
+    Play replay for a saved agent
+    
+    ### Args:
+        - filepath: filepath to an agent'''
     with open(filepath, 'rb') as f:
         agent = pickle.load(f)
     worker(agent, graphics=True)

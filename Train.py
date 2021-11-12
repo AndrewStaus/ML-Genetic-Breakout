@@ -1,15 +1,11 @@
-'''
-<h1>Train.py</h1>
-<p>
-This is the main training script.  It will train a new batch of agents.
-<br>Results will be printed to the console and logged.
+'''# Train.py
 
-<ul>
-<li>Population of 256 agents will be run through a genetic algorithm to create the next generation</li>
-<li>Top Agent is saved every generation, Best Agent is saved each time a new highscore is achieved</li>
-<li>Training will continue until the user quits</li>
-</ul>
-</p>
+This is the main training script.  It will train a new batch of agents.
+Results will be printed to the console and logged.
+
+- Population of 256 agents will be run through a genetic algorithm to create the next generation
+- Top Agent is saved every generation, Best Agent is saved each time a new highscore is achieved
+- Training will continue until the user quits
 '''
 from pandas.core.frame import DataFrame
 from lib.neural_network import Tools

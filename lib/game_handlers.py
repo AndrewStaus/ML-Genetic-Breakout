@@ -1,4 +1,4 @@
-"""
+"""# Game Handlers
 Event handlers for the game
 Handles user and agent inputs, as well as game events.
 """
