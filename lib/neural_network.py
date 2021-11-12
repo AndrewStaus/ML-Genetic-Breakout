@@ -75,7 +75,10 @@ class Activation:
 
 class DeepNeuralNetwork:
     """# Deep Neural Network
-    Create a Neural 
+    Neural network class that includes support for training through back propagation
+    as well as reinforcement learning.
+    Implemented with a scikit learn like api for ease of use.
+    
     ### Kwargs:
     - config: List definining the hidden layers and output specifications.
         example: 2 hidden ReLu layers with 10 softmax output:
@@ -271,10 +274,11 @@ class DeepNeuralNetwork:
         Each parameter has a 50% probability to be selected from either parent.
         
         ### Args:
-            - spouse:
+            - spouse: the other network to crossover with
 
         ### Returns:
-            Child neural network"""
+            Child neural network
+        """
         
         child = deepcopy(spouse)
 
