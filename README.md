@@ -89,7 +89,7 @@
 <h3>Hyper-Parameters</h3>
 <p>
 	<ul>
-		<li><b>Fitness:</b> Score^2.  Using an exponential function for fitness causes agents that perform slightly better
+		<li><b>Fitness Function:</b> Score^2.  Using an exponential function for fitness causes agents that perform slightly better
 			to have a much larger probability in selected than their close competitors.  This helps keep the agent pool healthy</li>
 		<li><b>Mutation Rate:</b> 25% of the weights and biases will be altered on an agent during the mutation step</li>
 		<li><b>Mutation Scale:</b> 0.10 will cause a relatively small change to occur  on the weights and biases that are chosen randomly for mutation</li>
@@ -128,7 +128,7 @@ Playback is not sped up; the framerate is bottlenecked mainly by the hypothesis 
 	<ul>
 		<li><b>Alter fitness function:</b> The current fitness function is only based off high scores.  Indirectly the time limit imposed on the agent to make a score does influence them to not waste time, but a bonus score for screen clear times would likely improve performance</li>
 		<li><b>More inputs:</b> The agent's knowledge of the game state is limited. It only knows the number of active blocks in a row, it does not know what column the blocks are in.  Increasing the number of inputs would likely help the network but would also greatly increase training time as there will be many more weights and biases</li>
-		<li><b>More hidden layers or nodes:</b> a single 16 node hidden layer is quite shallow.  the complexity may allow the agents to learn more sophisticated functions.  However, this would also greatly increase training times</li>
+		<li><b>More hidden layers or nodes:</b> a single 16 node hidden layer is quite shallow.  Adding complexity may allow the agents to learn more sophisticated functions.  However, this would also greatly increase training times</li>
 		<li><b>Memory:</b> The agent is only aware of the current state of the game and has no knowledge of previous states or actions it has taken.  Providing short term memory so that the agent has context for what they were doing in previous frames may also help it make better decisions</li>
 	</ul>
 </p>
