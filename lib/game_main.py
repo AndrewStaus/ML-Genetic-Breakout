@@ -1,3 +1,7 @@
+"""
+Main Game library.  Launch from the 'Play Agent.py' script to play
+or 'Play Agent.py' script to watch a trained agent play.
+"""
 import os
 from numpy.core.numeric import Infinity
 os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = 'hide'

@@ -1,3 +1,7 @@
+"""
+Event handlers for the game
+Handles user and agent inputs, as well as game events.
+"""
 import pygame
 
 SCORE = pygame.USEREVENT + 1

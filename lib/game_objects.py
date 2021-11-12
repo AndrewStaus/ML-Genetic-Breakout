@@ -1,3 +1,5 @@
+"""Breakout Game Classes"""
+
 import pygame
 import random
 import numpy as np
