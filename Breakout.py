@@ -1,4 +1,4 @@
-'''#Breakout.py
+'''# Breakout.py
 Launch the human playable version of breakout.
 The agents make it look easy, give it a go for yourself!
 
